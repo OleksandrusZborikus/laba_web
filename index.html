@@ -55,7 +55,7 @@
       text-align: center;
     }
 
-    /* Повзунок теми */
+    
     .switch {
       position: relative;
       display: inline-block;
@@ -100,7 +100,7 @@
       transform: translateX(26px);
     }
 
-    /* Модальне вікно */
+
     #feedbackModal {
       display: none;
       position: fixed;
@@ -175,7 +175,6 @@
     <div id="storage-info"></div>
   </footer>
 
-  <!-- Модальне вікно -->
   <div id="feedbackModal">
     <button class="close-btn" onclick="document.getElementById('feedbackModal').style.display='none'">✖</button>
     <form action="https://formspree.io/f/xgvkbrzj" method="POST">
@@ -188,7 +187,6 @@
   </div>
 
   <script>
-    // Зберегти інфу в localStorage
     const browserInfo = {
       userAgent: navigator.userAgent,
       platform: navigator.platform,
@@ -204,7 +202,6 @@
           `ОС: ${storedInfo.platform}, Браузер: ${storedInfo.userAgent}, Мова: ${storedInfo.language}`;
       }
 
-      // Завантажити коментарі
       fetch('https://jsonplaceholder.typicode.com/posts/6/comments')
         .then(res => res.json())
         .then(comments => {
@@ -216,7 +213,6 @@
           });
         });
 
-      // Перемикання теми
       const themeToggle = document.getElementById('themeToggle');
       const now = new Date();
       const hour = now.getHours();
@@ -239,7 +235,6 @@
         applyTheme(themeToggle.checked ? 'dark' : 'light');
       });
 
-      // Модальне вікно через 60 секунд
       setTimeout(() => {
         document.getElementById('feedbackModal').style.display = 'block';
       }, 60000);
